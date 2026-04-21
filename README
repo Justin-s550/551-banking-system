@@ -1,8 +1,9 @@
 # Bank Transaction Management with Fraud Detection
 
 Team Members:
-Name – Email – Stevens ID
-Name – Email – Stevens ID
+Michael Altamirano
+Diego Giraldo Tabares
+Justin Phan
 
 Project Description
 This project simulates a banking system with fraud detection. Users can create accounts, deposit, withdraw, and transfer money. The program analyzes transaction patterns to detect suspicious activity such as large transfers or repeated login attempts.
