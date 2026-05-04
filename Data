@@ -1,8 +1,0 @@
-
-[
-  {"account": "A001", "type": "deposit", "amount": 500},
-  {"account": "A001", "type": "withdraw", "amount": 200},
-  {"account": "A002", "type": "deposit", "amount": 1200},
-  {"account": "A001", "type": "transfer", "amount": 800},
-  {"account": "A002", "type": "withdraw", "amount": 150}
-]
