@@ -16,15 +16,42 @@ This project simulates a banking system with fraud detection. Users can create a
 - pytest 
 
 **File Structure** <br>
-main.ipynb – main program <br>
-modules/account.py – account class <br>
-modules/fraud_detection.py – fraud detection class <br>
-modules/data_manager.py – handles JSON data <br>
-modules/analytics.py – transaction statistics <br>
-tests/test_bank.py – pytest test cases <br>
+```
+551-banking-system/
+│
+├── main.py                    # Entry point, runs the banking program
+│
+├── data/
+│   ├── accounts.json          # Persistent storage for user accounts
+│   └── transactions.json      # Sample transaction data
+│
+├── modules/
+│   ├── account.py             # Account class with banking operations
+│   ├── analytics.py           # Transaction analysis and statistics
+│   ├── data_manager.py        # JSON file read/write helpers
+│   └── detection.py           # FraudDetector class
+│
+├── test/
+│   └── test_bank.py           # Pytest unit tests
+│
+└── README.md
+```
 
 **How to Run**
-1. Install dependencies <br>
-    pip install -r requirements.txt
-2. Run the notebook <br>
-jupyter notebook main.ipynb
+1. Clone the repository
+```bash
+git clone https://github.com/Justin-s550/551-banking-system.git
+cd 551-banking-system
+```
+2. Install dependencies
+```bash
+pip install numpy matplotlib pytest
+```
+ 3. Run the program
+```bash
+python main.py
+```
+4. Run the tests
+```bash
+python -m pytest test/test_bank.py -v
+```
