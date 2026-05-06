@@ -4,10 +4,22 @@ Handles deposits, withdrawals, and transfers.
 """
 
 class Account:
-    def __init__(self, account_id, username, balance=0):
-        """Initialize account with ID, username, and balance."""
+    """
+    Represents a bank account with basic banking operations.
+ 
+    Attributes:
+        account_id (str): Unique identifier for the account.
+        username (str): Account holder's username.
+        password (str): Account holder's password.
+        balance (float): Current account balance.
+        transactions (list): List of tuples recording transaction history.
+    """
+
+    def __init__(self, account_id, username, password, balance=0):
+        """Initialize account with ID, username, password, and balance."""
         self.account_id = account_id
         self.username = username
+        self.password = password
         self.balance = balance
         self.transactions = []  # list (mutable type)
 
@@ -21,6 +33,9 @@ class Account:
 
     def withdraw(self, amount):
         """Withdraw money from account."""
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be positive.")
+
         if amount > self.balance:
             raise ValueError("Insufficient funds")
 
@@ -31,7 +46,6 @@ class Account:
         """Transfer money to another account."""
         self.withdraw(amount)
         other_account.deposit(amount)
-        self.transactions.append(("transfer", amount))
 
     def __add__(self, amount):
         """Overload + operator for deposits."""
@@ -40,4 +54,9 @@ class Account:
 
     def __str__(self):
         """Return account details."""
-        return f"Account {self.account_id} | User: {self.username} | Balance: ${self.balance}"
+        return (
+            f"Account ID: {self.account_id}\n"
+            f"Username:   {self.username}\n"
+            f"Balance:    ${self.balance:.2f}\n"
+            f"Transactions: {len(self.transactions)}"
+        )
