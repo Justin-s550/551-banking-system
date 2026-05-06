@@ -1,9 +1,9 @@
 # Bank Transaction Management with Fraud Detection
 
-Team Members:
-Michael Altamirano
-Diego Giraldo Tabares
-Justin Phan
+Team Members: 
+Justin Phan, email: jphan1@stevens.edu, Stevens ID: 20011192 
+Diego Giraldo Tabares, email: dgiraldo@stevens.edu, Stevens ID: 20014654 
+Michael Altamirano, email: maltamr@stevens.edu, Stevens ID: 20011442 
 
 Project Description
 This project simulates a banking system with fraud detection. Users can create accounts, deposit, withdraw, and transfer money. The program analyzes transaction patterns to detect suspicious activity such as large transfers or repeated login attempts.
