@@ -6,7 +6,10 @@ Diego Giraldo Tabares, email: dgiraldo@stevens.edu, Stevens ID: 20014654 <br>
 Michael Altamirano, email: maltamr@stevens.edu, Stevens ID: 20011442 <br>
 
 **Project Description:** <br>
-This project simulates a banking system with fraud detection. Users can create accounts, deposit, withdraw, and transfer money. The program analyzes transaction patterns to detect suspicious activity such as large transfers or repeated login attempts.
+This project simulates a banking system with fraud detection. Users can create accounts, deposit, withdraw, and transfer money. The program analyzes transaction patterns and user login activity to detect suspicious activity such as large transfers or repeated login attempts.
+
+***Problem and Solution Approach***
+As financial fraud becomes more prevalent today, our program aims to provide users and providers of mobile banking applications a few ways to combat and identify fraudulent activity. Our program does this by utilizing the matplotlib library to visualize suspicious login attempts and the time they occured and flagging transaction amounts above a certain threshold amount as fraudulent which users can view in the program when selected. These are just a few ways we came up with to address the growing issue of financial fraud in the modern world. 
 
 **Libraries Used** <br> 
 - numpy
