@@ -58,3 +58,8 @@ python main.py
 ```bash
 python -m pytest test/test_bank.py -v
 ```
+
+###Main contributions of each team member
+Michael: Creation of ```Account``` and ```FraudDetector``` classes, Pytest cases, and json files for data handling
+Justin: Implementation of ```matplotlib``` for visualizing suspicious login activity and input handling for account creation
+Diego: Creation of entire main program
