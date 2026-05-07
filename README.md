@@ -19,7 +19,7 @@ This project simulates a banking system with fraud detection. Users can create a
 ```
 551-banking-system/
 │
-├── main.py                    # Entry point, runs the banking program
+├── main.ipynb                    # Entry point, runs the banking program
 │
 ├── data/
 │   ├── accounts.json          # Persistent storage for user accounts
