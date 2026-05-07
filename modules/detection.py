@@ -36,6 +36,7 @@ class FraudDetector:
         return False
     
     def plot_failed_logins(self):
+        """Plot failed login attemps as a bar graph."""
         if not self.failed_logins:
             print("No failed logins to display.")
             return
