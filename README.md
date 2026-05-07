@@ -16,7 +16,8 @@ As financial fraud becomes more prevalent today, our program aims to provide use
 - matplotlib
 - json
 - time
-- pytest 
+- pytest
+- os
 
 **File Structure** <br>
 ```
@@ -46,20 +47,15 @@ As financial fraud becomes more prevalent today, our program aims to provide use
 git clone https://github.com/Justin-s550/551-banking-system.git
 cd 551-banking-system
 ```
-2. Install dependencies
-```bash
-pip install numpy matplotlib pytest
-```
- 3. Run the program
-```bash
-python main.py
-```
-4. Run the tests
+2. Open the main.ipynb file
+3. Run all cells
+4. Use the program in the input field after running the ```main``` function
+5. To run the tests
 ```bash
 python -m pytest test/test_bank.py -v
 ```
 
-###Main contributions of each team member
-Michael: Creation of ```Account``` and ```FraudDetector``` classes, Pytest cases, and json files for data handling
-Justin: Implementation of ```matplotlib``` for visualizing suspicious login activity and input handling for account creation
+**Main contributions of each team member
+Michael: Creation of ```Account``` and ```FraudDetector``` classes, Pytest cases, and json files for data handling  
+Justin: Implementation of ```matplotlib``` for visualizing suspicious login activity and input handling for account creation  
 Diego: Creation of entire main program
