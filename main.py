@@ -1,5 +1,5 @@
 """
-main.py - Banking System with Fraud Detection
+main.ipynb - Banking System with Fraud Detection
 Entry point for the banking simulation program.
 Handles user interaction, account management, and fraud detection.
 """
@@ -14,6 +14,8 @@ from modules.DataManager import load_transactions, save_transactions
 # File path for storing account data
 ACCOUNTS_FILE = "data/accounts.json"
 TRANSACTIONS_FILE = "data/transactions.json"
+
+fraud_detector = FraudDetector(threshold=1000)
 
 
 def load_accounts(file_path):
@@ -84,8 +86,19 @@ def create_account(accounts):
         Account: The newly created Account object.
     """
     print("\n--- Create New Account ---")
-    username = input("Enter username: ").strip()
-    password = input("Enter password: ").strip()
+    while True:
+        username = input("Enter username: ").strip()
+        if not username:
+            print("No username entered. Please enter a valid username.")
+        else:
+            break
+
+    while True:
+        password = input("Enter password: ").strip()
+        if not password:
+            print("No password entered. Please enter a valid password.")
+        else:
+            break
 
     # Generate a simple account ID
     account_id = f"A{str(len(accounts) + 1).zfill(3)}"
@@ -100,6 +113,7 @@ def create_account(accounts):
     accounts[account_id] = new_account
     print(f"\nAccount created! Your account ID is: {account_id}")
     return new_account
+
 
 
 def login(accounts, fraud_detector):
@@ -150,7 +164,8 @@ def account_menu(account, accounts, fraud_detector):
         print("4. Transfer")
         print("5. View Transaction Summary")
         print("6. Run Fraud Analysis")
-        print("7. Logout")
+        print("7. View suspicious login attempts.")
+        print("8. Logout")
 
         choice = input("\nSelect an option: ").strip()
 
@@ -235,6 +250,9 @@ def account_menu(account, accounts, fraud_detector):
                 print("NOTE: This account has been flagged for suspicious activity.")
 
         elif choice == "7":
+            fraud_detector.plot_failed_logins()
+
+        elif choice == "8":
             print("Logged out successfully.")
             break
 
@@ -253,8 +271,7 @@ def main():
 
     # Load existing accounts and transactions
     accounts = load_accounts(ACCOUNTS_FILE)
-    fraud_detector = FraudDetector(threshold=1000)
-
+    
     while True:
         print("\n--- Main Menu ---")
         print("1. Login")
@@ -279,7 +296,5 @@ def main():
 
         else:
             print("Invalid option. Please try again.")
-
-
 if __name__ == "__main__":
     main()
