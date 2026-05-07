@@ -42,6 +42,7 @@ class FraudDetector:
             return
 
         for username, timestamps in self.failed_logins.items():
+            # Format the time of login attempts
             times = [datetime.fromtimestamp(t).strftime('%I:%M:%S %p') for t in timestamps]
             counts = list(range(1, len(timestamps) + 1))
             plt.bar(times, counts, label=username)
